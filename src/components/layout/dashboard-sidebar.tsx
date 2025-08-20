@@ -1,4 +1,5 @@
-import { Home } from "lucide-react";
+import { BookOpen, Home } from "lucide-react";
+import Link from "next/link";
 
 export function DashboardSidebar() {
   return (
@@ -12,11 +13,21 @@ export function DashboardSidebar() {
       </div>
 
       {/* Navigation */}
-      <div className="px-4">
-        <div className="bg-gray-200 rounded-lg p-3 flex items-center gap-3">
+      <div className="px-4 space-y-4">
+        <Link
+          href="/dashboard"
+          className="bg-gray-200 rounded-lg p-3 flex items-center gap-3 hover:bg-gray-300 transition-colors"
+        >
           <Home className="h-5 w-5 text-gray-800" />
           <span className="text-gray-800 font-medium">Dashboard</span>
-        </div>
+        </Link>
+        <Link
+          href="/course"
+          className="bg-gray-200 rounded-lg p-3 flex items-center gap-3 hover:bg-gray-300 transition-colors"
+        >
+          <BookOpen className="h-5 w-5 text-gray-800" />
+          <span className="text-gray-800 font-medium">Courses</span>
+        </Link>
       </div>
     </div>
   );
